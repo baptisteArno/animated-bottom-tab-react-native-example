@@ -1,0 +1,17 @@
+{
+  "name": "animatedBottomTabReactNativeExample",
+  "displayName": "animatedBottomTabReactNativeExample",
+  "expo": {
+    "name": "animatedBottomTabReactNativeExample",
+    "slug": "animatedBottomTabReactNativeExample",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
