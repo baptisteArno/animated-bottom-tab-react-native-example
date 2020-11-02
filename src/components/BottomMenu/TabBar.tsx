@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   TouchableOpacity,
@@ -18,6 +18,19 @@ export const TabBar = ({
   const [translateValue] = useState(new Animated.Value(0));
   const totalWidth = Dimensions.get("window").width;
   const tabWidth = totalWidth / state.routes.length;
+  
+  const animateSlider = (index: number) => {
+    Animated.spring(translateValue, {
+      toValue: index * tabWidth,
+      velocity: 10,
+      useNativeDriver: true,
+    }).start();
+  };
+
+  useEffect(() => {
+    animateSlider(state.index);
+  }, [state.index]);
+  
   return (
     <View style={[style.tabContainer, { width: totalWidth }]}>
       <View style={{ flexDirection: "row" }}>
@@ -53,11 +66,7 @@ export const TabBar = ({
               navigation.navigate(route.name);
             }
 
-            Animated.spring(translateValue, {
-              toValue: index * tabWidth,
-              velocity: 10,
-              useNativeDriver: true,
-            }).start();
+            animateSlider(index);
           };
 
           const onLongPress = () => {
