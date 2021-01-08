@@ -7,6 +7,6 @@
 </p>
 
 # Learn how to do this
-## [Link to article]()
+## [Link to article](https://medium.com/@baptiste.arnaud95/animated-sliding-tab-bar-in-react-native-aa3b9da02af9)
 
 
